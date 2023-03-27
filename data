@@ -36,3 +36,24 @@ similarity = code1 == code2
 
 print(similarity)  # Output: True
 
+
+
+
+
+
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
+
+# define two example sentences
+sentence1 = "The quick brown fox jumps over the lazy dog."
+sentence2 = "A quick brown dog jumps over the lazy fox."
+
+# create a CountVectorizer object to convert sentences to vectors
+vectorizer = CountVectorizer().fit_transform([sentence1, sentence2])
+
+# calculate cosine similarity between the two vectors
+cosine_similarities = cosine_similarity(vectorizer[0], vectorizer[1]).flatten()
+
+# print the cosine similarity score
+print("Cosine similarity between the two sentences:", cosine_similarities[0])
