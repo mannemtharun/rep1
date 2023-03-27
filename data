@@ -15,3 +15,24 @@ with open('random_names.csv', 'w', newline='') as csvfile:
         first_name = random.choice(first_names)
         last_name = random.choice(last_names)
         writer.writerow([first_name, last_name])
+        
+        
+        
+        
+        
+        
+import fuzzy
+
+name1 = "John Smith"
+name2 = "Jon Smyth"
+
+soundex1 = fuzzy.Soundex(4)
+soundex2 = fuzzy.Soundex(4)
+
+code1 = soundex1(name1)
+code2 = soundex2(name2)
+
+similarity = code1 == code2
+
+print(similarity)  # Output: True
+
