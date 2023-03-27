@@ -1,33 +1,17 @@
-| First Name | Last Name  |
-|------------|------------|
-| Zoe        | Cooper     |
-| Julian     | Perez      |
-| Emma       | Johnson    |
-| Samuel     | Martinez   |
-| Ava        | Lee        |
-| Lucas      | Robinson   |
-| Mia        | Wright     |
-| Ethan      | Davis      |
-| Isabella   | Rodriguez |
-| Jackson    | Anderson  |
-| Sophia     | Nelson     |
-| Noah       | King       |
-| Olivia     | Carter     |
-| Liam       | Mitchell   |
-| Charlotte  | Perez      |
-| Aiden      | Baker      |
-| Amelia     | Evans      |
-| Mason      | Turner     |
-| Harper     | Flores     |
-| Elijah     | Cooper     |
-| Emily      | Hernandez  |
-| Oliver     | Foster     |
-| Abigail    | Reed       |
-| Alexander | Powell     |
-| Ella       | Collins    |
-| Benjamin  | Ward       |
-| Madison    | Cox        |
-| William    | Brooks     |
-| Chloe      | Bailey     |
-| Michael    | Perry      |
-| Grace      | Price      |
+import random
+import csv
+
+# List of possible first names
+first_names = ['Alice', 'Bob', 'Charlie', 'David', 'Emily', 'Frank', 'Gina', 'Harry', 'Isaac', 'Julia', 'Karen', 'Liam', 'Megan', 'Nancy', 'Olivia', 'Peter', 'Quincy', 'Rachel', 'Sarah', 'Thomas', 'Ursula', 'Victoria', 'Wendy', 'Xavier', 'Yara', 'Zoe']
+
+# List of possible last names
+last_names = ['Adams', 'Brown', 'Clark', 'Davis', 'Edwards', 'Foster', 'Garcia', 'Hernandez', 'Ingram', 'Johnson', 'Kumar', 'Lee', 'Martin', 'Nguyen', 'Olsen', 'Patel', 'Quinn', 'Ramirez', 'Smith', 'Taylor', 'Upton', 'Vargas', 'Williams', 'Xu', 'Yang', 'Zhang']
+
+# Generate random names and write to CSV
+with open('random_names.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['First Name', 'Last Name'])
+    for i in range(30):
+        first_name = random.choice(first_names)
+        last_name = random.choice(last_names)
+        writer.writerow([first_name, last_name])
